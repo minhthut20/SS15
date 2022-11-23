@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Mobile(battery, draf_mess, ricive_mess, send_mess, status) {
+            this.battery = battery;
+            this.draf_mess = draf_mess;
+            this.recive_mess = ricive_mess;
+            this.send_mess = send_mess;
+            this.status = status;
+            this.checkPhone = function () {
+                if (this.status == true) {
+                    console.log(" Điện thoại đang bật ");
+                }
+                else {
+                    console.log(" Điện thoại đang tắt ");
+                }
+            }
+            this.charge = function () {
+                while (this.battery < 100) {
+                    console.log(" Điện thoại đang sạc , mức pin hiện tại là " + this.battery);
+                    this.battery += 10;
+                }
+                console.log(" Pin đầy, vui lòng rút sạc điện thoại !!!!");
+            }
+            this.turnPhone = function () {
+                if (this.status == true) {
+                    this.status = false;
+                    console.log(" Điện thoại đã được tắt ");
+                }
+                else {
+                    this.status = true;
+                    console.log(" Hello Bạn Yêu !!!!!!");
+                }
+            }
+            this.writeMessage = function (message) {
+                console.log(message);
+                console.log("Your battery is: " + (battery -= 1) + "%");
+            },
+            this.receiveMessage = function (phone) {
+                    console.log("You have a message from " + phone);
+                    console.log("Your battery is: " + (battery -= 1) + "%");
+                }
+            this.sentMessage = function (phone) {
+                console.log("You have sent message to " + phone);
+                console.log("Your battery is: " + (battery -= 1) + "%");
+            }
+            this.seeMessage = function () {
+                console.log("You have recevied these message: " + this.ricive_mess);
+                console.log("Your battery is: " + (battery -= 1) + "%");
+            }
+            this.seeSentMessage = function () {
+                console.log("You have sent these message: " + this.send_mess);
+                console.log("Your battery is: " + (battery -= 1) + "%");
+            }
+        }
+        let iphone = new Mobile(50, "Hello", "How are you ? ", "Fire thank", false);
+        iphone.turnPhone();
+        iphone.checkPhone();
+        iphone.charge();
+        iphone.writeMessage();
+        iphone.receiveMessage();
+        iphone.sentMessage();
+        iphone.seeMessage();
+        iphone.seeSentMessage();
+    </script>
+</body>
+
+</html>
