@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <canvas id="rectangle" width="400" height="200" style="border:1px solid
+        #d3d3d3;"></canvas>
+    <script>
+       let myRectangle = {
+            width : 200,
+            height : 100,
+            getArea : function(){
+                let area = myRectangle.width * myRectangle.height;
+                return area;
+            },
+            getPerimeter : function() {
+                let perimeter = (myRectangle.width + myRectangle.height) * 2;
+                return perimeter;
+            },
+            canvas : function() {
+                var ctx = document.getElementById("rectangle").getContext("2d");
+                ctx.beginPath();
+                ctx.rect(20, 20, myRectangle.width, myRectangle.height);
+                ctx.stroke();
+            }
+       }
+       document.write("<br>");
+       document.write(myRectangle.getArea());
+       document.write("<br>");
+       document.write(myRectangle.getPerimeter());
+       myRectangle.canvas();
+    </script> -->
+
+    <script>
+        // khởi tạo lớp ractangle
+        function rectangle(width, height){
+            this.width = width,
+            this.height = height,
+            this.area = function getArea() {
+                return this.width * this.height;
+            }
+            this.perimeter = function getPerimeter() {
+                return (this.width + this.height) * 2;
+            }
+        }
+        let ret = new rectangle(20, 40);
+
+        console.log("Diện tích hìh chữ nhật : ", ret.area());
+        console.log("Chu vi hìh chữ nhật : ", ret.perimeter());
+
+        
+    </script>
+</body>
+
+</html>
